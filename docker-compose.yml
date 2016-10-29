@@ -22,8 +22,6 @@ services:
       - ./data/jira:/var/atlassian/jira
     networks:
       - operations-network
-    links:
-      - "mysql:database"
   bitbucket-server:
     image: dunkelfrosch/bitbucket
     ports:
