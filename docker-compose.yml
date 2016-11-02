@@ -49,4 +49,4 @@ services:
       XMPP_DOMAIN: chat.mallorca-software.com
       ERLANG_NODE: ejabberd
       EJABBERD_ADMIN: pwild@chat.mallorca-software.com
-      TZ: Europe/Berlin
+      TZ: "Europe/Berlin"
