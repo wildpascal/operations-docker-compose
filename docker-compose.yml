@@ -39,3 +39,14 @@ services:
       - ./data/confluence-server:/var/atlassian/application-data/confluence
     networks:
       - operations-network
+  ejabberd:
+    image: rroemhild/ejabberd
+    ports:
+      "5222:5222"
+      "5269:5269"
+      "5280:5280"
+    environment:
+      XMPP_DOMAIN: chat.mallorca-software.com
+      ERLANG_NODE: ejabberd
+      EJABBERD_ADMIN: pwild@chat.mallorca-software.com
+      TZ: Europe/Berlin
