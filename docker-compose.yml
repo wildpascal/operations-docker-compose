@@ -11,15 +11,15 @@ services:
       MYSQL_ROOT_PASSWORD: root
     volumes:
       - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
-      - ./Users/pwild/docker/container/data/mysql:/var/lib/mysql
+      - ./data/mysql:/var/lib/mysql
     networks:
-      - operations-network  
+      - operations-network
   jira:
     image: cptactionhank/atlassian-jira:latest
     ports:
       - "8081:8080"
     volumes:
-      - ./Users/pwild/docker/container/data/jira:/var/atlassian/jira
+      - ./data/jira:/var/atlassian/jira
     networks:
       - operations-network
   bitbucket-server:
@@ -28,7 +28,7 @@ services:
       - "8082:7990"
       - "7999:7999"
     volumes:
-      - ./Users/pwild/docker/container/data/bitbucket-server:/var/atlassian/application-data/bitbucket
+      - ./data/bitbucket-server:/var/atlassian/application-data/bitbucket
     networks:
       - operations-network
   confluence-server:
@@ -36,6 +36,6 @@ services:
     ports:
       - "8083:8090"
     volumes:
-      - ./Users/pwild/docker/container/data/confluence-server:/var/atlassian/application-data/confluence
+      - ./data/confluence-server:/var/atlassian/application-data/confluence
     networks:
       - operations-network
